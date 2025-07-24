@@ -113,6 +113,7 @@
     height: 90vh;
     padding: 1.5rem 2rem;
     border-radius: 12px;
+    overflow: hidden;
   }
 
   .skills-modal-header {
@@ -155,6 +156,7 @@
     height: 80vh;
     padding: 1rem 1.5rem;
     border-radius: 10px;
+    overflow: hidden;
   }
 
   .skills-modal-header {
@@ -178,6 +180,7 @@
   .skills-description {
     font-size: 0.85rem;
     margin: 10px 0;
+    overflow: hidden;
   }
 
   .skills-card-grid {

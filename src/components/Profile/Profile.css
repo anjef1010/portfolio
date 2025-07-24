@@ -155,8 +155,9 @@
 @media (max-width: 767px) {
   .profile-popup-window {
     width: 98vw;
-    height: 98vh;
+    height: 80vh;
     border-radius: 8px;
+    overflow: hidden;
   }
   
   .profile-window-content {
