@@ -1,0 +1,217 @@
+.projects-window {
+  width: 80vw;
+  height: 80vh;
+  background: #1f1f1f;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.projects-header {
+  background: #2d2d2d;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.window-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.window-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.window-btn.yellow {
+  background: #ffbd2e;
+}
+
+.window-btn.green {
+  background: #28c840;
+}
+
+.window-btn.red {
+  background: #ff5f57;
+}
+
+.projects-description {
+  padding: 16px 24px;
+  font-size: 0.95rem;
+  color: #ccc;
+  background-color: #1c1c1c;
+  font-family: 'Sora', sans-serif;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.projects-body {
+  padding: 30px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.folder-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+.folder-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 140px;
+}
+
+.folder-title {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #eee;
+  text-align: center;
+  font-family: 'Sora', sans-serif;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* Position glitch background inside window */
+.projects-window {
+  position: relative; /* <-- Required for absolute positioning of background */
+  width: 80vw;
+  height: 80vh;
+  background: #1f1f1f;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.glitch-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* behind everything */
+  pointer-events: none;
+}
+
+.projects-header,
+.projects-description,
+.projects-body {
+  position: relative;
+  z-index: 1; /* above glitch background */
+}
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .projects-window {
+    width: 95vw;
+    height: 90vh;
+    border-radius: 10px;
+  }
+
+  .projects-header {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+
+  .window-btn {
+    width: 10px;
+    height: 10px;
+  }
+
+  .projects-description {
+    padding: 12px 18px;
+    font-size: 0.85rem;
+  }
+
+  .projects-body {
+    padding: 20px;
+  }
+
+  .folder-row {
+    gap: 30px;
+  }
+
+  .folder-box {
+    min-width: 120px;
+  }
+
+  .folder-title {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-window {
+    width: 98vw;
+    height: 95vh;
+    border-radius: 8px;
+  }
+
+  .projects-header {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+  }
+
+  .window-controls {
+    gap: 5px;
+  }
+
+  .window-btn {
+    width: 8px;
+    height: 8px;
+  }
+
+  .projects-description {
+    padding: 10px 15px;
+    font-size: 0.75rem;
+  }
+
+  .projects-body {
+    padding: 15px;
+  }
+
+  .folder-row {
+    gap: 20px;
+    flex-direction: column; /* Stack folders on very small screens */
+    align-items: center;
+  }
+
+  .folder-box {
+    min-width: unset; /* Remove min-width to allow full width */
+    width: 100%; /* Take full width */
+    max-width: 150px; /* Limit max width for readability */
+  }
+
+  .folder-title {
+    font-size: 0.75rem;
+  }
+}

@@ -1,0 +1,123 @@
+.dock-container {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.dock {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.app.light .dock {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.app.dark .dock {
+  background-color: rgba(26, 26, 26, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dock-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  margin: 0 0.25rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  min-width: 60px;
+}
+
+.dock-item:hover {
+  transform: translateY(-5px);
+}
+
+.dock-item.active::before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+
+
+.app.light .dock-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.app.dark .dock-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dock-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+  transition: all 0.3s ease;
+}
+
+.dock-item:hover .dock-icon {
+  transform: scale(1.2);
+}
+
+.dock-label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-align: center;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.dock-item:hover .dock-label {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .dock-container {
+    bottom: 1rem;
+  }
+  
+  .dock {
+    padding: 0.4rem;
+  }
+  
+  .dock-item {
+    min-width: 50px;
+    padding: 0.4rem;
+  }
+  
+  .dock-icon {
+    font-size: 1.3rem;
+  }
+  
+  .dock-label {
+    font-size: 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dock {
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .dock::-webkit-scrollbar {
+    display: none;
+  }
+}

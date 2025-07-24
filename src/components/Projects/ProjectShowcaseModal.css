@@ -1,0 +1,134 @@
+.project-showcase-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1100;
+}
+
+.project-showcase-modal {
+  background: #1f1f1f;
+  color: #fff;
+  padding: 24px 32px;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  animation: fadeInUp 0.3s ease;
+}
+
+.showcase-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-btn {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.showcase-description {
+  margin: 1rem 0;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.showcase-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
+.tag {
+  background: #333;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+.visit-link {
+  color: #6fa3ff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.visit-link:hover {
+  text-decoration: underline;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .project-showcase-modal {
+    padding: 20px 25px;
+    max-width: 350px;
+  }
+
+  .close-btn {
+    font-size: 1.3rem;
+  }
+
+  .showcase-description {
+    font-size: 0.9rem;
+  }
+
+  .tag {
+    padding: 3px 8px;
+    font-size: 0.75rem;
+  }
+
+  .visit-link {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-showcase-modal {
+    padding: 15px 20px;
+    width: 95%;
+    border-radius: 10px;
+  }
+
+  .close-btn {
+    font-size: 1.2rem;
+  }
+
+  .showcase-description {
+    font-size: 0.85rem;
+    margin: 0.8rem 0;
+  }
+
+  .showcase-tags {
+    gap: 6px;
+    margin-bottom: 0.8rem;
+  }
+
+  .tag {
+    padding: 2px 7px;
+    font-size: 0.7rem;
+  }
+
+  .visit-link {
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,456 @@
+.videos-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.videos-modal-window {
+  background: #111;
+  width: 80vw;
+  height: 80vh;
+  border-radius: 18px;
+  padding: 24px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+}
+
+.videos-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.videos-title {
+  color: #0ff;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.glitch-text {
+  text-shadow: 0 0 4px #0ff, 0 0 12px #0ff;
+}
+
+.window-controls {
+  display: flex;
+  gap: 10px;
+}
+.window-btn {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: none;
+  cursor: default;
+}
+.red {
+  background: #ff5f57;
+}
+.yellow {
+  background: #ffbd2e;
+}
+.green {
+  background: #28c840;
+}
+
+.videos-description {
+  color: #ccc;
+  margin: 10px 0 20px;
+  font-size: 1.1rem;
+}
+
+.video-carousel-3cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex: 1;
+}
+
+.nav-button {
+  background: #222;
+  border: none;
+  color: #0ff;
+  font-size: 40px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s;
+  flex-shrink: 0;
+}
+
+.nav-button:hover {
+  background: #0cc;
+}
+
+.nav-button:focus {
+  outline: 2px solid #0ff;
+}
+
+.cards-wrapper {
+  display: flex;
+  gap: 24px;
+  width: 80%;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.video-card-big {
+  background: #1a1a1a;
+  border-radius: 18px;
+  width: 27%; /* About 3 cards in 80% width with gaps */
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 0 20px #0ff;
+  user-select: none;
+  padding: 16px;
+  color: #fff;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.video-card-big:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #0ff;
+}
+
+.video-thumbnail-wrapper-big {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  height: 180px;
+}
+
+.video-thumbnail-wrapper-big:hover {
+  transform: scale(1.05);
+}
+
+.video-thumbnail-big {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 14px;
+  user-select: none;
+}
+
+.play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.video-thumbnail-wrapper-big:hover .play-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.play-btn i {
+  color: #0ff;
+  font-size: 36px;
+}
+
+.project-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #0ff;
+  color: #000;
+  padding: 5px 12px;
+  font-size: 0.9rem;
+  border-radius: 14px;
+  font-weight: 700;
+  user-select: none;
+}
+
+.card-content-big {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-grow: 1;
+}
+
+.video-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0ff;
+  margin: 0;
+}
+
+.video-description {
+  font-size: 1rem;
+  color: #ccc;
+  min-height: 60px;
+  margin: 0;
+}
+
+.tech-used {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.tech-item {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  color: #aaa;
+}
+
+.video-meta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  color: #999;
+  font-size: 0.85rem;
+}
+
+.watch-button {
+  background: #0ff;
+  color: #000;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 700;
+  margin-top: auto;
+  cursor: pointer;
+  transition: background 0.3s;
+  align-self: flex-start;
+  font-size: 1rem;
+}
+
+.watch-button:hover {
+  background: #0cc;
+}
+/* Mobile responsiveness */
+@media (max-width: 1024px) {
+  .videos-modal-window {
+    width: 90vw;
+    height: 85vh;
+    padding: 20px;
+  }
+
+  .videos-title {
+    font-size: 1.2rem;
+  }
+
+  .videos-description {
+    font-size: 1rem;
+    margin: 8px 0 15px;
+  }
+
+  .video-carousel-3cards {
+    gap: 15px;
+  }
+
+  .nav-button {
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .cards-wrapper {
+    gap: 15px;
+    width: 85%;
+  }
+
+  .video-card-big {
+    width: 30%; /* Adjust for 3 cards */
+    padding: 14px;
+  }
+
+  .video-thumbnail-wrapper-big {
+    height: 150px;
+  }
+
+  .video-title {
+    font-size: 1.1rem;
+  }
+
+  .video-description {
+    font-size: 0.9rem;
+    min-height: 50px;
+  }
+
+  .tech-used {
+    font-size: 0.8rem;
+  }
+
+  .video-meta {
+    font-size: 0.8rem;
+  }
+
+  .watch-button {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .videos-modal-window {
+    width: 95vw;
+    height: 90vh;
+    padding: 15px;
+    border-radius: 15px;
+  }
+
+  .videos-title {
+    font-size: 1.1rem;
+  }
+
+  .window-btn {
+    width: 12px;
+    height: 12px;
+  }
+
+  .videos-description {
+    font-size: 0.9rem;
+    margin: 6px 0 12px;
+  }
+
+  .video-carousel-3cards {
+    flex-direction: column; /* Stack carousel elements */
+    gap: 20px;
+  }
+
+  .nav-button {
+    display: none; /* Hide nav buttons on small screens if only one card is shown */
+  }
+
+  .cards-wrapper {
+    flex-direction: column; /* Stack cards vertically */
+    width: 95%;
+    gap: 20px;
+    overflow-y: auto; /* Enable scrolling for cards */
+    padding-right: 5px; /* For scrollbar */
+  }
+
+  .cards-wrapper::-webkit-scrollbar {
+    width: 5px;
+  }
+  .cards-wrapper::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 4px;
+  }
+  .cards-wrapper::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .video-card-big {
+    width: 95%; /* Make cards take full width */
+    max-width: 350px; /* Limit max width for readability */
+    align-self: center; /* Center cards */
+    padding: 12px;
+  }
+
+  .video-thumbnail-wrapper-big {
+    height: 160px; /* Adjust height */
+  }
+
+  .video-title {
+    font-size: 1rem;
+  }
+
+  .video-description {
+    font-size: 0.85rem;
+    min-height: auto; /* Allow height to adjust */
+  }
+
+  .project-badge {
+    font-size: 0.8rem;
+    padding: 4px 10px;
+  }
+
+  .play-btn i {
+    font-size: 30px;
+  }
+
+  .watch-button {
+    padding: 7px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .videos-modal-window {
+    width: 98vw;
+    height: 95vh;
+    padding: 10px;
+    border-radius: 12px;
+  }
+
+  .videos-title {
+    font-size: 1rem;
+  }
+
+  .window-controls {
+    gap: 5px;
+  }
+
+  .window-btn {
+    width: 10px;
+    height: 10px;
+  }
+
+  .videos-description {
+    font-size: 0.8rem;
+    margin: 5px 0 10px;
+  }
+
+  .cards-wrapper {
+    gap: 15px;
+    padding-right: 3px;
+  }
+
+  .video-card-big {
+    width: 100%;
+    max-width: 300px; /* Further limit max width */
+    padding: 10px;
+  }
+
+  .video-thumbnail-wrapper-big {
+    height: 140px;
+  }
+
+  .video-title {
+    font-size: 0.95rem;
+  }
+
+  .video-description {
+    font-size: 0.8rem;
+  }
+
+  .project-badge {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+  }
+
+  .play-btn i {
+    font-size: 24px;
+  }
+
+  .watch-button {
+    padding: 6px;
+    font-size: 0.8rem;
+  }
+}
