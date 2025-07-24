@@ -21,11 +21,14 @@ const SplineScene = () => {
         <Spline
           scene="https://prod.spline.design/PYIRjA2qPQaiN2hE/scene.splinecode"
           style={{
-            width: '582',
-            height: '926',
+            width: '100%',
+            height: '100vh',
+            maxWidth: '390px',
+            maxHeight: '844px',
             position: 'absolute',
             top: 0,
-            left: 0,
+            left: '50%',
+            transform: 'translateX(-50%)',
             zIndex: 1,
           }}
         />

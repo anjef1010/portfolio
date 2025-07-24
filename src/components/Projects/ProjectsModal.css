@@ -160,8 +160,8 @@
 
 @media (max-width: 480px) {
   .modal-window {
-    width: 98vw;
-    height: 95vh;
+    width: 95vw;
+    height: 80vh;
     border-radius: 8px;
   }
 

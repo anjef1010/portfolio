@@ -393,8 +393,8 @@
 
 @media (max-width: 480px) {
   .videos-modal-window {
-    width: 98vw;
-    height: 95vh;
+    width: 95vw;
+    height: 80vh;
     padding: 10px;
     border-radius: 12px;
   }

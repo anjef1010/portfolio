@@ -152,8 +152,8 @@
 }
 @media (max-width: 480px) {
   .hobbies-window {
-    width: 98vw;
-    height: 95vh;
+    width: 95vw;
+    height: 80vh;
     border-radius: 8px;
   }
 

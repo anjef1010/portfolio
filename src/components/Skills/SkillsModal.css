@@ -151,8 +151,8 @@
 
 @media (max-width: 480px) {
   .skills-modal-container {
-    width: 98vw;
-    height: 95vh;
+    width: 95vw;
+    height: 80vh;
     padding: 1rem 1.5rem;
     border-radius: 10px;
   }
