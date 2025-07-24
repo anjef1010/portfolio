@@ -99,6 +99,7 @@
     left: unset; /* Remove left positioning */
     right: 1rem; /* Set right position for smaller screens */
     gap: 0.8rem; /* Slightly reduce gap */
+    z-index: 3;
   }
   
   .social-label {
@@ -122,7 +123,7 @@
     left: unset; /* Remove left positioning */
     right: 0.5rem; /* Further adjust right position */
     gap: 0.6rem; /* Further reduce gap */
-    z-index: auto;
+    z-index: 3;
   }
   
   .social-label {

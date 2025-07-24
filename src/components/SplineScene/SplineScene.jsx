@@ -41,7 +41,7 @@ const SplineScene = () => {
             width: '100%',
             height: '91%',
             transform: 'scale(1.2)',
-            zIndex: 999,
+            zIndex: 1,
           }}
         />
       )}
