@@ -217,7 +217,7 @@
 @media (min-width: 768px) and (max-width: 1023px) {
   .profile-popup-window {
     width: 90vw;
-    height: 90vh;
+    height: 80vh;
   }
   
   .profile-window-content {
